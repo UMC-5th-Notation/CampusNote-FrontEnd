@@ -4,20 +4,15 @@ on: push
 jobs:
   update:
     name: Fastlane Update
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
    
-      - name: Set up ruby env
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7.2
-          bundler-cache: true
+      # - name: Set up ruby env
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.7.2
+      #     bundler-cache: true
    
       - name: Run tests
         run: bundle exec fastlane android test

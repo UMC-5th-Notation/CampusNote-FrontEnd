@@ -15,7 +15,7 @@ jobs:
       #     bundler-cache: true
    
       - name: Run tests
-        run: bundle exec fastlane android test
+        run: bundle exec fastlane test
   
       - name: Run slack_build
         run: bundle exec fastlane slack_build

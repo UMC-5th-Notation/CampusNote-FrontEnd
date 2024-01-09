@@ -19,6 +19,11 @@ jobs:
 #          bundle config path vendor/bundle
 #          bundle install --jobs 4 --retry 3
 
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+
       - name: Set up ruby env
         uses: ruby/setup-ruby@v1
         with:

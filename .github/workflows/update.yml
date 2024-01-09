@@ -25,12 +25,14 @@ jobs:
           ruby-version: 3.2.2
           bundler-cache: true
 
+      - run : sudo gem install fastlane
+
 
       - name: Install Firebase app distribution plugin
-        run: bundle exec fastlane add_plugin firebase_app_distribution
+        run: fastlane add_plugin firebase_app_distribution
    
       - name: Run tests
-        run: bundle exec fastlane test
+        run: fastlane test
   
       - name: Run slack_build
-        run: bundle exec fastlane slack_build
+        run: fastlane slack_build

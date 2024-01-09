@@ -23,7 +23,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2.2
-          bundler-cache: true
 
       - run : sudo gem install fastlane
 

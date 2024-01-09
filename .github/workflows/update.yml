@@ -8,16 +8,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
    
+#      - name: Set up ruby env
+#        uses: ruby/setup-ruby@v1
+#        with:
+#          ruby-version: 3.2.2
+#
+#      - name: Install bundler
+#        run: |
+#          gem install bundler:2.2.27
+#          bundle config path vendor/bundle
+#          bundle install --jobs 4 --retry 3
+
       - name: Set up ruby env
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
+          ruby-version: 2.7.2
+          bundler-cache: true
 
-      - name: Install bundler
-        run: |
-          gem install bundler:2.2.27
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
 
       - name: Install Firebase app distribution plugin
         run: bundle exec fastlane add_plugin firebase_app_distribution

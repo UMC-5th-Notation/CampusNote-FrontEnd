@@ -27,8 +27,8 @@ jobs:
       - run : sudo gem install fastlane
 
 
-      - name: Install Firebase app distribution plugin
-        run: sudo fastlane add_plugin firebase_app_distribution
+#      - name: Install Firebase app distribution plugin
+#        run: sudo fastlane add_plugin firebase_app_distribution
    
       - name: Run tests
         run: sudo fastlane test

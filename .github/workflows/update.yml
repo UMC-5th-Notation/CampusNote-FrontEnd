@@ -29,10 +29,10 @@ jobs:
 
 
       - name: Install Firebase app distribution plugin
-        run: fastlane add_plugin firebase_app_distribution
+        run: sudo fastlane add_plugin firebase_app_distribution
    
       - name: Run tests
-        run: fastlane test
+        run: sudo fastlane test
   
       - name: Run slack_build
-        run: fastlane slack_build
+        run: sudo fastlane slack_build

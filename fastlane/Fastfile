@@ -17,7 +17,7 @@ default_platform(:android)
 
 platform :android do
   before_all do
-	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+	ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
   desc "Runs all the tests"
@@ -42,7 +42,10 @@ platform :android do
 
   desc "Lane for distribution"
   lane :distribute do
-  	gradle( task: "clean assembleRelease")
+      gradle(task: "clean assembleRelease")
+      gradle(
+          task: "assemble",
+      )
   	firebase_app_distribution(
   		app: "1:152814340752:android:d334473d644773a287a615",
   		debug: true
@@ -50,24 +53,27 @@ platform :android do
   end
 
   lane :slack_build do
-  	gradle( task: "clean assembleRelease")
+    gradle(task: "clean assembleRelease")
+    gradle(
+          task: "assemble",
+    )
   	firebase_app_distribution(
   		app: "1:152814340752:android:d334473d644773a287a615",
+  		testers: "bora5242@gmail.com, dltpdnjs2000@gmail.com, hobby0519@gmail.com, qnfn120@gmail.com, jow55255@gmail.com, imi21123@gmail.com, qnfn120@gmail.com",
   		debug: true
   	)
-    slack(message: "Build Successful!")
+
+  	latest_release = firebase_app_distribution_get_latest_release(
+        app: "1:152814340752:android:d334473d644773a287a615",
+        debug: true
+    )
+
+    slack(
+      		message: "successful deploy :rocket: link for app is : " + latest_release[:testingUri]
+    )
   end
 
   # Add this to your Fastfile
-  after_all do |lane|
-    latest_release = firebase_app_distribution_get_latest_release(
-    	app: "1:152814340752:android:d334473d644773a287a615",
-    	debug: true
-    )
-  	slack(
-  		message: "successful deploy :rocket: link for app is : " + latest_release[:testingUri]
-  		)
-  	end
 
   	error do |lane, exception|
   		slack(

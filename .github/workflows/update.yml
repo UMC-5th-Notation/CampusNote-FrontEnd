@@ -6,6 +6,9 @@ jobs:
     name: Fastlane Update
     runs-on: ['self-hosted', 'Linux', 'X64']
     steps:
+
+      - run : sudo rm -rf /home/ubuntu/actions-runner/_work/CampusNote-FrontEnd-Android/CampusNote-FrontEnd-Android/.gradle
+
       - uses: actions/checkout@v2
 
 #      - name: Set up JDK 17

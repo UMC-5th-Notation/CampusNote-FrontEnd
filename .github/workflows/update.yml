@@ -35,6 +35,8 @@ jobs:
       - run : chmod a+x gradlew
 
       - run : gradle --stop
+
+      - run : export ANDROID_HOME="/usr/lib/android-sdk/"
    
       - name: Run tests
         run: sudo fastlane test

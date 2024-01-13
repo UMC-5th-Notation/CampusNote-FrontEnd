@@ -36,7 +36,7 @@ jobs:
 
       - run : gradle --stop
 
-      - run : export ANDROID_HOME="/usr/lib/android-sdk/"
+      - run : export ANDROID_HOME="/home/ubuntu/Android/Sdk/android-sdk"
    
       - name: Run tests
         run: sudo fastlane test

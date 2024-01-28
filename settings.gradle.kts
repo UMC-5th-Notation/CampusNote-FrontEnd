@@ -13,7 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-
 rootProject.name = "CampusNote"
 include(":app")
- 

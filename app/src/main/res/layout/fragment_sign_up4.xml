@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".signUp.SignUp4Fragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#4076FF"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="43dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/sign_up4_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="좋아요, 이제 마지막 단계네요!"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/sign_up4_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="에브리타임 시간표를\n등록해주세요"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_up4_text1"/>
+
+    <EditText
+        android:id="@+id/sign_up4_semester_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="시간표 링크 붙여넣기"
+        android:inputType="textPersonName"
+        android:singleLine="true"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/et_background"
+        app:layout_constraintTop_toBottomOf="@id/sign_up4_text2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

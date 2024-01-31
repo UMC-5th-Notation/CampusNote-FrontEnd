@@ -6,22 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.notation.campusnote.R
-import com.notation.campusnote.databinding.FragmentSignUp3Binding
+import com.notation.campusnote.databinding.FragmentSignUp4Binding
 
-class SignUp3Fragment : Fragment() {
-    private var _binding: FragmentSignUp3Binding? = null
+class SignUp4Fragment : Fragment() {
+    private var _binding: FragmentSignUp4Binding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSignUp3Binding.inflate(inflater, container, false)
+        _binding = FragmentSignUp4Binding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-        (activity as? SignUpActivity)?.onFragmentInteraction(isFinalFragment = false)
+        (activity as? SignUpActivity)?.onFragmentInteraction(isFinalFragment = true)
         (activity as? OnFragmentInteractionListener)?.onFirstFragmentShown(false)
     }
 

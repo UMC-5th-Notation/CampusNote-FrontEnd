@@ -20,8 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="27dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="18dp"
             android:src="@drawable/btn_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,6 +32,8 @@
             android:textSize="20dp"
             android:textColor="@color/black"
             android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="28dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sign_up3_next_btn"
+        android:id="@+id/sign_up_next_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다음"

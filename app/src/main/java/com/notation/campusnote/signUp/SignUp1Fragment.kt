@@ -20,23 +20,28 @@ class SignUp1Fragment : Fragment() {
     ): View? {
         _binding = FragmentSignUp1Binding.inflate(inflater, container, false)
 
-        // 다음 버튼 클릭 리스너 안에서
-        binding.signUp1NextBtn.setOnClickListener {
-            // signUp2Fragment 인스턴스 생성
-            val signUp2Fragment = SignUp2Fragment()
-
-            // Activity에서 FragmentManager를 가져와서 트랜잭션 시작
-            activity?.supportFragmentManager?.beginTransaction()?.apply {
-                // FrameLayout에 SignUp2Fragment 교체
-                replace(R.id.sign_up_frame, signUp2Fragment)
-                // 트랜잭션을 백 스택에 추가
-                addToBackStack(null)
-                // 트랜잭션 커밋
-                commit()
-            }
-        }
+//        // 다음 버튼 클릭 리스너 안에서
+//        binding.signUp1NextBtn.setOnClickListener {
+//            // signUp2Fragment 인스턴스 생성
+//            val signUp2Fragment = SignUp2Fragment()
+//
+//            // Activity에서 FragmentManager를 가져와서 트랜잭션 시작
+//            activity?.supportFragmentManager?.beginTransaction()?.apply {
+//                // FrameLayout에 SignUp2Fragment 교체
+//                replace(R.id.sign_up_frame, signUp2Fragment)
+//                // 트랜잭션을 백 스택에 추가
+//                addToBackStack(null)
+//                // 트랜잭션 커밋
+//                commit()
+//            }
+//        }
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as? OnFragmentInteractionListener)?.onFirstFragmentShown(true)
     }
 
     override fun onDestroyView() {

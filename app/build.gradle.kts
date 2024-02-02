@@ -42,7 +42,6 @@ android {
 dependencies {
     implementation ("com.kakao.sdk:v2-user:2.19.0") // 카카오 로그인
     implementation("com.kakao.sdk:v2-share:2.19.0")// 카카오 공유
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

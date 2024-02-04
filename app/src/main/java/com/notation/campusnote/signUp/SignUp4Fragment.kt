@@ -17,6 +17,7 @@ class SignUp4Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSignUp4Binding.inflate(inflater, container, false)
+        binding.
         return binding.root
     }
 

@@ -1,0 +1,6 @@
+<resources>
+    <style name="CustomScrollbarStyle">
+        <item name="android:scrollbarThumbVertical">@drawable/scrollbar_thumb</item>
+        <item name="android:scrollbarTrackVertical">@drawable/scrollbar_track</item>
+    </style>
+</resources>

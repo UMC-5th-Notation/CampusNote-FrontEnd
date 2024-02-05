@@ -17,7 +17,7 @@ class MyPreferences(context: Context) {
     }
 
     // 클라이언트 ID 저장
-    fun saveProfilePic(profilePic: String) {
+    fun saveProfilePic(profilePic: String?) {
         sharedPreferences.edit().putString("profile_pic", profilePic).apply()
     }
 

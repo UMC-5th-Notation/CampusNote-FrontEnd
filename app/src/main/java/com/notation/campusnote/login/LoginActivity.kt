@@ -42,6 +42,7 @@ class LoginActivity :AppCompatActivity(){
                 } else if (token != null) {
                     Log.i(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
                     // 성공적인 로그인 처리 추가
+
                     val intent = Intent(this, SignUpActivity::class.java)
                     startActivity(intent)
                 }

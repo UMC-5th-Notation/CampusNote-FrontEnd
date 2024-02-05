@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.notation.campusnote.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.user.UserApiClient
+import com.notation.campusnote.sharedPreference.MyPreferences
 import com.notation.campusnote.signUp.SignUpActivity
 
 class LoginActivity :AppCompatActivity(){
@@ -37,30 +38,32 @@ class LoginActivity :AppCompatActivity(){
             UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
                 if (error != null) {
                     Log.e(TAG, "카카오톡으로 로그인 실패", error)
-
                     // 특정 상황(취소 등)에 대한 처리 추가
                 } else if (token != null) {
                     Log.i(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
                     // 성공적인 로그인 처리 추가
-                    val intent = Intent(this, SignUpActivity::class.java)
-                    startActivity(intent)
+
+                    var myPreferences = MyPreferences(this)
+
+                    UserApiClient.instance.me { user, error ->
+                        if (error != null) {
+                            Log.e(TAG, "사용자 정보 요청 실패", error)
+                        } else if (user != null) {
+                            Log.i(
+                                TAG, "사용자 정보 요청 성공" +
+                                        "\n회원번호: ${user.id}" +
+                                        "\n프로필사진: ${user.kakaoAccount?.profile?.thumbnailImageUrl}"
+                            )
+                            myPreferences.saveClientId(token.accessToken)
+                            myPreferences.saveProfilePic("user.kakaoAccount?.profile?.thumbnailImageUrl")
+
+                            startActivity(Intent(this, SignUpActivity::class.java))
+                        }
+                    }
                 }
             }
         } else {
             UserApiClient.instance.loginWithKakaoAccount(this, callback = callback)
-        }
-    }
-
-    private fun updateKakaoLoginUi() {
-        UserApiClient.instance.me { user, error ->
-            if (error != null) {
-                Log.e(TAG, "사용자 정보 요청 실패", error)
-            }
-            else if (user != null) {
-                Log.i(TAG, "사용자 정보 요청 성공" +
-                        "\n회원번호: ${user.id}" +
-                        "\n프로필사진: ${user.kakaoAccount?.profile?.thumbnailImageUrl}")
-            }
         }
     }
 }

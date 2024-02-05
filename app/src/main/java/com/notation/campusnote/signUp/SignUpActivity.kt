@@ -2,14 +2,11 @@ package com.notation.campusnote.signUp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.notation.campusnote.ApiService.Datas.SignUpData
 import com.notation.campusnote.R
 import com.notation.campusnote.databinding.ActivitySignUpBinding
-import com.notation.campusnote.sharedPreference.MyPreferences
 
 interface OnFragmentInteractionListener {
     fun onFragmentInteraction(isFinalFragment: Boolean)
@@ -52,10 +49,6 @@ class SignUpActivity : AppCompatActivity(), OnFragmentInteractionListener {
                 4 -> {
                     // 여기에 완료 버튼이 눌렸을 때의 로직을 구현합니다.
                     // 예: 데이터 저장, 결과 화면으로 전환 등
-                    Log.d("REST 테스팅","시작!")
-                    var myPreferences = MyPreferences(this)
-                    var signUpData = SignUpData("string","string","string","string", "string")
-                    var output = RestHelper.postKakaosignUp(signUpData){result -> Log.d("REST 테스팅", "최종 output : ${result}")}
                 }
             }
         }
@@ -100,14 +93,14 @@ class SignUpActivity : AppCompatActivity(), OnFragmentInteractionListener {
                 text = "완료"
                 //setBackgroundColor(ContextCompat.getColor(context, R.color.black))
                 // 또는 배경을 drawable 리소스로 설정하는 경우
-                 background = ContextCompat.getDrawable(context, R.drawable.sign_up_done_btn_background)
+                background = ContextCompat.getDrawable(context, R.drawable.sign_up_done_btn_background)
             }
         } else {
             binding.signUpNextBtn.apply {
                 text = "다음"
                 //setBackgroundColor(ContextCompat.getColor(context, R.color.your_original_color))
                 // 또는 배경을 drawable 리소스로 설정하는 경우
-                 background = ContextCompat.getDrawable(context, R.drawable.sign_up_next_btn_background)
+                background = ContextCompat.getDrawable(context, R.drawable.sign_up_next_btn_background)
             }
         }
     }

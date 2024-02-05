@@ -16,11 +16,13 @@
         android:theme="@style/Theme.CampusNote"
         tools:targetApi="31"
         android:usesCleartextTraffic="true"
-        >
-
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
-
+  >
+        <activity
+            android:name=".semester.SemesterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -30,22 +32,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:host="oauth"
+                <data
+                    android:host="oauth"
                     android:scheme="kakao3fb9a572bb1f2e3cd66d370d2f7888dd" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".signUp.SignUpActivity"
-            android:exported="false"/>
-
+        <activity
+            android:name=".signUp.SignUpActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,0 +1,11 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="8dp"
+    android:insetBottom="8dp"
+    android:insetLeft="3dp"
+    android:insetRight="3dp">
+    <shape>
+        <solid android:color="#FCFCFC"/> <!-- 썸의 색상 -->
+        <corners android:radius="20dp"/> <!-- 썸의 모서리를 둥글게 -->
+        <size android:width="8dp"/> <!-- 썸의 너비 -->
+    </shape>
+</inset>

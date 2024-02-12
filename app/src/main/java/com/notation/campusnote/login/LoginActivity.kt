@@ -41,8 +41,8 @@ class LoginActivity :AppCompatActivity(){
                     // 특정 상황(취소 등)에 대한 처리 추가
                 } else if (token != null) {
                     Log.i(TAG, "카카오톡으로 로그인 성공 ${token.accessToken}")
-                    // 성공적인 로그인 처리 추가
 
+                    // 성공적인 로그인 처리 추가
                     var myPreferences = MyPreferences(this)
 
                     UserApiClient.instance.me { user, error ->

@@ -51,8 +51,7 @@
         app:layout_constraintStart_toStartOf="@id/kakao_login_button"
         app:layout_constraintTop_toTopOf="@id/kakao_login_button"
         android:layout_marginStart="32dp"
-        android:elevation="40dp"/>
-    <!--왜 안 나올까....@@@-->
+        android:elevation="41dp"/>
     <Button
         android:id="@+id/kakao_login_button"
         android:layout_width="1108dp"
@@ -71,4 +70,5 @@
         android:textSize="20dp"
         android:textAlignment="center"
         tools:ignore="RtlCompat"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
